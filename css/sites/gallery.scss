@@ -1,0 +1,136 @@
+.gallery {
+  .content {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  &__nav {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    width:100%;
+    padding-bottom:10px;
+    @include md(){
+      padding-left:15px;
+      padding-right:15px;
+    }
+    &-item {
+      width:20%;
+      text-align:center;
+      text-transform:uppercase;
+      cursor:pointer;
+      padding:14px 0;
+      position:relative;
+      border-top-left-radius:14px;
+      border-top-right-radius:14px;
+      @include md(){
+        width:33%;
+      }
+      @include xs(){
+        //width:100%;
+      }
+      &:after{
+        content:'';
+        transition:$transition;
+        position:absolute;
+        bottom:0;
+        left:0;
+        width:100%;
+        background:$accent;
+        height:3px;
+        display:block;
+        transform:scaleX(0);
+      }
+
+      &:hover{
+        color:$accent-hover;
+      }
+
+      &.active {
+        color:$accent-hover;
+        h5 {
+          color:$accent;
+        }
+        &:after{
+          transform:scaleX(1);
+        }
+      }
+
+      h5{
+        margin:0;
+      }
+    }
+  }
+  &__title{
+      padding-top:16px;
+      padding-bottom:26px;
+      display:block;
+      font-weight:bold;
+    @include md(){
+      padding-left:15px;
+      padding-right:15px;
+    }
+    }
+  &__photos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__photo {
+    width: 31%;
+    margin-bottom:2%;
+    overflow:hidden;
+    @include awesome-img();
+  }
+
+  &__eqs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__eq {
+    width: 31%;
+    margin-bottom:2%;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    @include awesome-img();
+
+  }
+
+  &__videos {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__video {
+    width: 31%;
+    margin-bottom: 2%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-video{
+      display:block;
+    }
+    &-wrap{
+      width:100%;
+      height:100%;
+      position:relative;
+    }
+  }
+
+  &__item{
+    &.gallery-item{
+      @include md(){
+        width:48%;
+        margin-bottom:15px;
+      }
+      @include xs(){
+        width:100%;
+        margin-bottom:32px;
+      }
+    }
+  }
+}

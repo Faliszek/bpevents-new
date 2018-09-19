@@ -1,0 +1,144 @@
+.refs {
+  //@include display-flex();
+  //@include align-items(center);
+    //@include justify-content(center);
+  &__row {
+    display:flex;
+    align-items:center;
+  }
+  &__slider{
+    position:relative;
+    width:80%;
+    float:left;
+    @include sm(){
+      width:100%;
+      padding-left:15px;
+      padding-right:15px;
+    }
+  }
+  .swiper-button-disabled {
+    opacity:0.3 !important;
+  }
+  .arrow-prev{
+
+    width:10%;
+    float:left;
+    text-align:center;
+    font-size:72px;
+    cursor:pointer;
+    opacity:0.6;
+    z-index:99;
+    transition:$transition;
+    @include sm(){
+      display:none;
+    }
+    &:hover{
+      opacity:0.8;
+    }
+  }
+  .arrow-next {
+
+    float:left;
+    width:10%;
+    text-align: center;
+    font-size:72px;
+    cursor:pointer;
+    opacity:0.6;
+    z-index:99;
+    transition:$transition;
+    @include sm(){
+      display:none;
+    }
+    &:hover{
+      opacity:0.8;
+    }
+  }
+}
+.ref{
+  h2{
+    margin-top:0;
+  }
+  &__slide{
+
+  }
+  &__wrap{
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  &__img{
+    width:48%;
+    @include sm(){
+      width:100%;
+    }
+    padding:15px 0;
+    img{
+      width: 90%;
+      height: 90%;
+      border-radius: 999px;
+      margin: 0 auto;
+      @include sm(){
+        width:60%;
+        height:60%;
+      }
+    }
+    @include awesome-img();
+  }
+  &__content{
+    padding-left:2%;
+    width:48%;
+    @include sm(){
+      width:100%;
+      padding-left:0;
+    }
+    position: relative;
+      //font-family:$open-sans;
+      font-style:italic;
+    .date{
+      position:absolute;
+      top:0;
+      right:0;
+    }
+    .title{
+      @include sm() {
+        text-align:center;
+      }
+    }
+    .text {
+      //font-family:$open-sans;
+      font-style:italic;
+      @include sm() {
+        text-align:center;
+      }
+      }
+    .link {
+      float:right;
+      text-decoration:underline;
+      color:$text-color;
+      font-size:24px;
+      padding-top: 24px;
+      padding-right: 10px;
+
+      @include sm(){
+        width:100%;
+        float:none;
+        text-align:center;
+        display:block;
+      }
+    }
+  }
+}
+.facebook-button {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  color:#fff;
+  max-width:320px;
+  width:90%;
+}
+.btn-row{
+  padding-top:40px;
+  padding-bottom:25px;
+}
+

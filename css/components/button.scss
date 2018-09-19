@@ -1,0 +1,53 @@
+.main-button {
+
+  background:$accent;
+  color:#fff;
+  text-transform:uppercase;
+  text-decoration: none;
+  border:none;
+  border-radius:6px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 24px;
+  font-size: 18px;
+  width: 70%;
+  transition:$transition;
+  cursor:pointer;
+  text-align:center;
+  &:hover{
+    background-color:$accent-hover;
+    @extend .z-depth-3;
+    color:#fff;
+    text-decoration:none;
+    opacity:1;
+  }
+  &:visited, &:focus, &:active {
+    color:#fff;
+    text-decoration:none;
+    outline:none;
+  }
+}
+
+.secondary-button {
+  color:$accent;
+  text-transform:uppercase;
+  text-decoration: none;
+  border:none;
+  border-radius:6px;
+  height: 48px;
+  line-height: 48px;
+  padding: 16px 24px;
+  font-size: 18px;
+  transition:$transition;
+  cursor:pointer;
+  text-align:center;
+  display:inline-block;
+  &:hover{
+    color:$accent-hover;
+    text-decoration:none;
+  }
+  &:visited, &:focus, &:active {
+    color:$accent;
+    text-decoration: none;
+  }
+}

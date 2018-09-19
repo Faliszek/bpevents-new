@@ -1,0 +1,131 @@
+@import '_mixins.scss';
+@import '_theme-variables.scss';
+.page{
+  &__title {
+    font-weight:bold;
+    @include md(){
+      font-size:3.2rem;
+      padding-left:15px;
+      padding-right:15px;
+
+    }
+  }
+  &__content {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+
+
+a{
+  transition: $transition-time;
+  &:hover{
+    opacity:0.7;
+  }
+}
+
+.z-depth-1 {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.z-depth-1-half {
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+}
+.z-depth-2 {
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+.z-depth-3 {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.3);
+}
+.z-depth-4 {
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.3);
+}
+.z-depth-5 {
+  box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+}
+.img-responsive{
+  max-width:100%;
+  max-height:100%;
+  width:auto;
+  height:auto;
+  display:block;
+}
+.center-block {
+  margin: 0 auto;
+  float: none;
+  display: block;
+
+}
+
+.text-center{
+  text-align:center;
+}
+
+.fullscreen-v-img{
+  z-index:1000;
+  background-color: rgba(0,0,0,0.9) !important;
+
+}
+.header-v-img {
+  background:rgba(0,0,0,0) !important;
+}
+.scale-hover-effect {
+  img{
+    transition:$transition;
+  }
+  &:hover{
+    img{
+      transform:scale(1.03);
+    }
+  }
+}
+
+.flash-enter-active {
+  transition: all 0.3s cubic-bezier(.17,.67,.63,.94);
+}
+.flash-enter{
+  opacity: 0.4;
+  transform:scaleY(0.98);
+}
+.flash-enter-to{
+  opacity: 1;
+  transform:scaleY(1);
+}
+.flash-leave-active{
+  transition: all 0.3s cubic-bezier(.17,.67,.63,.94);
+}
+.flash-leave {
+  opacity: 0.8;
+}
+
+.flash-leave-to {
+  opacity: 0;
+}
+
+.scale-enter-active {
+  transition: all 0.3s cubic-bezier(.17,.67,.63,.94);
+}
+.scale-enter{
+  opacity: 0.8;
+  transform:scaleY(0.8);
+}
+
+.scale-enter-to{
+  opacity: 1;
+  transform:scaleY(1);
+}
+
+.scale-leave-active{
+  transition: all 0.3s cubic-bezier(.17,.67,.63,.94);
+}
+.scale-leave {
+  opacity: 0.6;
+  transform:scaleY(0.6);
+}
+
+.scale-leave-to {
+  opacity: 0;
+  transform:scaleY(0);
+}
+.unvisible{
+  opacity:0 !important;
+}
