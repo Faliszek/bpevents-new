@@ -1,142 +1,149 @@
 .contact {
   padding-top: 64px;
   padding-bottom: 64px;
-  &__wrap{
-    display:flex;
+  &__wrap {
+    display: flex;
     align-items: center;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     padding-top: 36px;
-    @include md(){
-      padding-left:15px;
-      padding-right:15px;
+    @include md() {
+      padding-left: 15px;
+      padding-right: 15px;
     }
   }
 
-  &__desc{
-    width:50%;
-    @include md(){
-      width:100%;
+  &__desc {
+    width: 50%;
+    @include md() {
+      width: 100%;
     }
   }
 
-  &__form-wrapper{
-    width:50%;
-    @include md(){
-      width:100%;
+  &__form-wrapper {
+    width: 50%;
+    @include md() {
+      width: 100%;
     }
   }
   &__form {
-    width:100%;
-    margin:0 auto;
+    width: 100%;
+    margin: 0 auto;
     padding: 24px 48px;
-    background: rgba(245,245,245,0.1);
-    flex-wrap:wrap;
-    @include sm(){
+    background: rgba(245, 245, 245, 0.1);
+    flex-wrap: wrap;
+    @include sm() {
       padding: 24px;
     }
-    &.was-send{
+    &.was-send {
       .input {
-        font-size:0;
+        font-size: 0;
       }
     }
     input {
-      min-height:39px;
+      min-height: 39px;
     }
-    .input{
-      transition:$transition;
+    .input {
+      transition: $transition;
     }
     .firstname {
-      width:48%;
-      float:left;
-      @include sm(){
-        width:100%;
+      width: 48%;
+      float: left;
+      @include sm() {
+        width: 100%;
       }
     }
-    .email{
-      width:48%;
-      float:right;
-      @include sm(){
-        width:100%;
+    .email {
+      width: 48%;
+      float: right;
+      @include sm() {
+        width: 100%;
       }
     }
     .topic {
-      width:100%;
+      width: 100%;
     }
     .message {
-      width:100%;
+      width: 100%;
     }
-    .form-group .input{
-      width:100%;
+    .form-group .input {
+      width: 100%;
     }
     .message textarea {
-      min-height:240px;
+      min-height: 240px;
     }
   }
   &__info {
-    display:flex;
+    display: flex;
     flex-direction: column;
-    align-items:center;
-    padding-top:35px;
-    padding-bottom:35px;
-    .email{
-      font-size:24px;
-      line-height:36px;
-      @include md(){
-        font-size:16px;
-        line-height:18px;
+    align-items: center;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    p {
+      font-size: 18px;
+    }
+    .big {
+      font-size: 24px;
+      margin: 20px 0 10px;
+    }
+    .email {
+      font-size: 24px;
+      line-height: 36px;
+      @include md() {
+        font-size: 16px;
+        line-height: 18px;
       }
-      a{
-        color:$text-color;
+      a {
+        color: $text-color;
       }
-      &:before{
-        font-family:'fontello';
-        content:"\f0e0";
-        font-size:36px;
-        color:$text-color;
-        width:64px;
-        text-align:center;
-        display:block;
-        float:left;
-        @include md(){
+      &:before {
+        font-family: "fontello";
+        content: "\f0e0";
+        font-size: 36px;
+        color: $text-color;
+        width: 64px;
+        text-align: center;
+        display: block;
+        float: left;
+        @include md() {
           width: 50px;
-          font-size:22px;
+          font-size: 22px;
         }
       }
     }
 
-    .phone{
-      font-size:24px;
-      line-height:36px;
-      @include md(){
-        font-size:16px;
-        line-height:18px;
+    .phone {
+      font-size: 24px;
+      line-height: 36px;
+      @include md() {
+        font-size: 16px;
+        line-height: 18px;
       }
-      &:before{
-        font-family:'fontello';
-        content:"\e803";
-        font-size:36px;
-        color:$text-color;
-        width:64px;
-        text-align:center;
-        display:block;
-        float:left;
-        @include md(){
+      &:before {
+        font-family: "fontello";
+        content: "\e803";
+        font-size: 36px;
+        color: $text-color;
+        width: 64px;
+        text-align: center;
+        display: block;
+        float: left;
+        @include md() {
           width: 50px;
-          font-size:22px;
+          font-size: 22px;
         }
       }
     }
   }
-  &__logo{
-    width:50%;
-    height:100px;
-    margin:0 auto;
-    @include md(){
-      height:unset;
+  &__logo {
+    width: 50%;
+    height: 100px;
+    margin: 0 auto;
+    @include md() {
+      height: unset;
     }
-    img{
-      max-width:100%;
-      max-height:100%;
+    img {
+      max-width: 100%;
+      max-height: 100%;
     }
   }
 }

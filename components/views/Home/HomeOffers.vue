@@ -1,32 +1,46 @@
 <template>
+
+    
   <section class="offer-block">
-    <h1 class="offer-block__title">Oferta</h1>
-    <div class="col-md-12 col-lg-4 offer" v-for="offer in offers">
+    <div class="container">
+       <div class="row">
+    <h1 class="offer-block__title">Zespół profesjonalnych DJ-ów i konferansjerów</h1>
+</div>
+      <div class="row content-row">
+                <article v-html="text"></article>
+            </div>
+           
+</div>
+    <div class="col-md-12 col-lg-4 offer"  v-for="offer in offers">
       <i :class="setIcon(offer.offer_icon)" class="z-depth-1"></i>
-      <h3 class="offer__title">{{ offer.offer_title }}</h3>
+      <h2 class="offer__title">{{ offer.offer_title }}</h2>
       <p class="offer__content" v-html="offer.offer_content"></p>
     </div>
   </section>
-</template>
+             
+ </template>
 <script>
-  import {mapGetters} from 'vuex'
-  export default{
-    data(){
-      return {
-        msg: 'hello vue'
-      }
-    },
+import { mapGetters } from "vuex";
 
-    computed: {
-      ...mapGetters({
-        offers: 'getHomeOffers'
-      })
-    },
-    methods: {
-      setIcon(string){
-        string = "icon icon-" + string;
-        return string;
-      },
+export default {
+  props: ["defines", "text"],
+  data() {
+    return {
+      msg: "hello vue"
+    };
+  },
+
+  computed: {
+    ...mapGetters({
+      offers: "getHomeOffers"
+    })
+  },
+
+  methods: {
+    setIcon(string) {
+      string = "icon icon-" + string;
+      return string;
     }
   }
+};
 </script>

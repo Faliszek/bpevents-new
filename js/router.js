@@ -1,15 +1,16 @@
-import { DATA_PAGE } from './data';
-import VueRouter from 'vue-router';
-import { scrollToTop } from './helper.js'
+import { DATA_PAGE } from "./data";
+import VueRouter from "vue-router";
+import { scrollToTop } from "./helper.js";
 
-const assignRoutesToComponents = (dataRoutes) => {
+const assignRoutesToComponents = dataRoutes => {
   let mappedRoutes = [];
   dataRoutes.forEach((route, index) => {
     mappedRoutes.push({
       name: route.name,
       path: route.path,
-      component:
-          require(`../components/views/${route.component}/${route.component}.vue`),
+      component: require(`../components/views/${route.component}/${
+        route.component
+      }.vue`),
       meta: {
         site_title: route.site_title,
         title: route.meta_title,
@@ -19,25 +20,24 @@ const assignRoutesToComponents = (dataRoutes) => {
 
     if (index + 1 === dataRoutes.length) {
       mappedRoutes.push({
-        path: '*',
-        component: require('../components/views/Home/Home.vue'),
-        redirect: '/'
+        path: "*",
+        component: require("../components/views/Home/Home.vue"),
+        redirect: "/"
       });
     }
   });
-  console.log(mappedRoutes);
   return mappedRoutes;
 };
 
 const routesCreator = () => {
-  return assignRoutesToComponents(DATA_PAGE.routes)
+  return assignRoutesToComponents(DATA_PAGE.routes);
 };
 
 const router = new VueRouter({
-  mode: 'history',
-  root: '/',
+  mode: "history",
+  root: "/",
   routes: routesCreator(),
-  scrollBehavior (to, from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     scrollToTop(300);
   }
 });

@@ -4,40 +4,44 @@ export const stateCreator = () => {
       links: []
     },
     contact: {
-      desc: '',
-      img: {},
+      desc: "",
+      img: {}
     },
 
     gallery: {
-      equipmentTitle: '',
+      text: "",
+      equipmentTitle: "",
       equipment: [],
-      photosTitle: '',
+      photosTitle: "",
       photos: [],
-      videosTitle: '',
+      videosTitle: "",
       videos: []
     },
 
     home: {
+      text: "",
       slides: [],
       offers: [],
-      content: [],
+      content: []
     },
 
     recommend: {
-      recommendations: [],
+      text: "",
+      recommendations: []
     },
 
     references: {
+      text: "",
       refs: [],
-      facebookLink: ''
+      facebookLink: ""
     },
-    cmsData: '',
+    cmsData: "",
     footer: {
       widget: {},
       menu: {
-        title: '',
+        title: "",
         links: []
       }
     }
-  }
+  };
 };

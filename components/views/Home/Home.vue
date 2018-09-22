@@ -12,16 +12,17 @@
     </section>
     <transition name="flash" appear>
       <div>
-        <home-offers v-show="showRestContent" ref="OffersComponent"></home-offers>
+        <home-offers 
+        v-bind:text="text"
+         ref="OffersComponent"></home-offers>
       </div>
     </transition>
 
     <transition name="flash" appear>
       <div>
         <home-content
-                v-show="showRestContent"
                 v-for="(block, index) in content" :block="block"
-                :class="index%2 == 1 ? 'left-side' : 'right-side'" key="index">
+                :class="index % 2 == 1 ? 'left-side' : 'right-side'">
         </home-content>
       </div>
     </transition>
@@ -29,69 +30,71 @@
 
 </template>
 <script type="text/babel">
-  import {mapGetters} from 'vuex';
-  import Slider from './HomeSlider.vue';
-  import loader from '../../loader.vue';
-  import HomeOffers from './HomeOffers.vue';
-  import HomeContent from './HomeContent.vue';
-  import {scrollToElement, boundedChunksWithMutations} from '../../../js/helper';
+import { mapGetters } from "vuex";
+import Slider from "./HomeSlider.vue";
+import loader from "../../loader.vue";
+import HomeOffers from "./HomeOffers.vue";
+import HomeContent from "./HomeContent.vue";
+import {
+  scrollToElement,
+  boundedChunksWithMutations
+} from "../../../js/helper";
 
-
-  export default{
-    name: 'Home',
-    props: ['defines'],
-    components: {
-      'slider': Slider,
-      'loader': loader,
-      HomeOffers,
-      HomeContent,
-    },
-    head: {
-      // To use "this" in the component, it is necessary to return the object through a function
-      title: function () {
-        return {
-          inner: this.$route.meta.site_title,
-          separator: ' ',
+export default {
+  name: "Home",
+  props: ["defines"],
+  components: {
+    slider: Slider,
+    loader: loader,
+    HomeOffers,
+    HomeContent
+  },
+  head: {
+    // To use "this" in the component, it is necessary to return the object through a function
+    title: function() {
+      return {
+        inner: this.$route.meta.site_title,
+        separator: " "
+      };
+    }
+  },
+  computed: {
+    ...mapGetters({
+      slides: "getHomeSlides",
+      offers: "getHomeOffers",
+      content: "getHomeContent",
+      text: "getHomeText"
+    })
+  },
+  data() {
+    return {
+      slidesArrived: "loader",
+      showRestContent: false
+    };
+  },
+  created() {
+    let ID = this.defines.homePage;
+    this.$store.dispatch("fetchDataPage", {
+      ID,
+      chunks: boundedChunksWithMutations(ID)
+    });
+    this.$store.dispatch({
+      ID,
+      type: "fetchContentSite",
+      setterType: "setHomeText"
+    });
+  },
+  watch: {
+    slidesArrived: {
+      handler: function(val, oldVal) {
+        if (val === "slider") {
+          setTimeout(() => {
+            this.showRestContent = true;
+          }, 1000);
         }
       },
-      meta: function () {
-        return [
-          {name: 'description', content: this.$route.meta.desc},
-          {name: 'title', content: this.$route.meta.title}
-        ]
-      }
-    },
-    computed: {
-      ...mapGetters({
-        slides: 'getHomeSlides',
-        offers: 'getHomeOffers',
-        content: 'getHomeContent',
-      })
-    },
-    data(){
-      return {
-        slidesArrived: 'loader',
-        showRestContent: false,
-      }
-    },
-    created(){
-      let ID = this.defines.homePage;
-      this.$store.dispatch(
-          'fetchDataPage',
-          {ID, chunks: boundedChunksWithMutations(ID)}
-      )
-    },
-    watch: {
-      slidesArrived: {
-        handler: function (val, oldVal) {
-          if (val === 'slider') {
-            setTimeout(() => {
-              this.showRestContent = true
-            }, 1000)
-          }
-        },
-        deep: true
-      }
+      deep: true
     }
   }
+};
 </script>

@@ -1,0 +1,24 @@
+.content-row {
+  margin: 25px 0;
+  color: rgba(0, 0, 0, 0.8);
+  margin: 25px auto 50px;
+  max-width: 900px;
+
+  p {
+    font-size: 18px;
+    margin: 0 0 30px;
+  }
+}
+
+.content-row-map {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  padding: 45px 0;
+}
+
+.no-margin {
+  * {
+    margin: 0;
+  }
+}

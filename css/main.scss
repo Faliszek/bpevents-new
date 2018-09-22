@@ -2,45 +2,60 @@
 // @import 'dev';
 //
 /*** LIBS **/
-@import '~bootstrap-only-css';
-@import '~node-waves/dist/waves.css';
-@import '~materialize-css/sass/components/_mixins.scss';
-@import '~materialize-css/sass/components/_color.scss';
-@import '~materialize-css/sass/components/_variables.scss';
-@import '~materialize-css/sass/components/_normalize.scss';
-@import '~materialize-css/sass/components/_typography.scss';
+@import "~bootstrap-only-css";
+@import "~node-waves/dist/waves.css";
+@import "~materialize-css/sass/components/_mixins.scss";
+@import "~materialize-css/sass/components/_color.scss";
+@import "~materialize-css/sass/components/_variables.scss";
+@import "~materialize-css/sass/components/_normalize.scss";
+@import "~materialize-css/sass/components/_typography.scss";
 
 /*** THEME ***/
 //@import 'theme/_font-awesome.css';
-@import 'theme/fontello.css';
-@import 'theme/_theme-variables.scss';
-@import 'theme/_mixins.scss';
-@import 'theme/_classes.scss';
+@import "theme/fontello.css";
+@import "theme/_theme-variables.scss";
+@import "theme/_mixins.scss";
+@import "theme/_classes.scss";
 /*** COMPONENTS ***/
-@import 'components/loader';
-@import 'components/header';
-@import 'components/footer';
-@import 'components/button';
-@import 'components/input';
-@import 'components/toast';
-@import 'components/scrollbar';
-@import 'components/video-player';
-@import 'components/facebook-widget';
+@import "components/loader";
+@import "components/header";
+@import "components/footer";
+@import "components/button";
+@import "components/input";
+@import "components/toast";
+@import "components/scrollbar";
+@import "components/video-player";
+@import "components/facebook-widget";
+@import "components/facebook-widget";
+@import "components/content-row";
 
 /*** SITES ***/
-@import 'sites/home';
-@import 'sites/contact';
-@import 'sites/gallery';
-@import 'sites/references';
-@import 'sites/recommend';
+@import "sites/home";
+@import "sites/contact";
+@import "sites/gallery";
+@import "sites/references";
+@import "sites/recommend";
 
-html{
-  overflow-x:hidden;
+html {
+  overflow-x: hidden;
 }
-body{
+body {
   font-family: $font-family;
   transition: $transition;
+  font-size: 16px;
+  @include lg() {
+    font-size: 100%;
+  }
+  @include md() {
+    font-size: 85%;
+  }
+  @include sm() {
+    font-size: 80%;
+  }
+  @include xs() {
+    font-size: 70%;
+  }
 }
-[v-cloak]{
-  display:none !important;
+[v-cloak] {
+  display: none !important;
 }

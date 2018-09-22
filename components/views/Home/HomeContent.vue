@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <article class="content-block__article">
-          <h1 class="content-block__title">{{ block.title }}</h1>
+          <h3 class="content-block__title">{{ block.title }}</h3>
           <div class="content-block__wrapper">
             <p class="content-block__text" v-html="block.content"></p>
             <figure class="content-block__img scale-hover-effect">
@@ -17,8 +17,8 @@
   </section>
 </template>
 <script>
-  import {mapGetters} from 'vuex';
-  export default{
-    props: ['block'],
-  }
+import { mapGetters } from "vuex";
+export default {
+  props: ["block"]
+};
 </script>
